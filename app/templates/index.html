@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="page-title">Welcome to AeroPricePredictor</h1>
+<p class="slogan">{{ slogan }}</p>
+
+<div class="search-panel">
+    <h2>Find the Best Flight Price</h2>
+    <form action="{{ url_for('main_bp.search_flights') }}" method="GET">
+        <label for="origin">Origin Airport (NE):</label>
+        <select name="origin" id="origin" required>
+            <option value="">-- Select Origin --</option>
+            {% for airport in airports %}
+            <option value="{{ airport }}">{{ airport }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="destination">Destination:</label>
+        <select name="destination" id="destination" required>
+            <option value="">-- Select Destination --</option>
+            {% for airport in airports %}
+            <option value="{{ airport }}">{{ airport }}</option>
+            {% endfor %}
+        </select>
+        
+        <button type="submit" class="button"><i class="fas fa-search"></i> Search Flights</button>
+    </form>
+</div>
+{% endblock %}

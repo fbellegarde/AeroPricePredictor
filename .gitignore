@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.so
+.env
+
+# Virtual Environment
+venv/
+.pytest_cache/
+.DS_Store
+
+# IDE/Editor Files
+.vscode/
+
+# Docker
+# We DO NOT ignore the Dockerfile, but we ignore the build context files
+*.o
+*.a
+
+# Sensitive Files (NEVER commit these)
+*.joblib  # Trained ML models
+*.json  # Markov model
+*.csv # Data files (especially raw data)
+/data

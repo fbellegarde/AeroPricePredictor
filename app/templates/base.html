@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title | default('AeroPricePredictor') }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT_CODE.js" crossorigin="anonymous"></script>
+    <style>
+        /* FALLBACK STYLES (will be moved to style.css) */
+        body { font-family: sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; }
+        .navbar { background-color: #1a73e8; padding: 10px 20px; color: white; display: flex; justify-content: space-between; align-items: center; }
+        .navbar a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; }
+        .content { padding: 20px; max-width: 1200px; margin: 0 auto; }
+        .button { background-color: #34a853; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; }
+        .button:hover { background-color: #3dbe5d; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="{{ url_for('main_bp.index') }}">AeroPricePredictor <i class="fas fa-plane"></i></a>
+        </div>
+        <nav>
+            <a href="{{ url_for('main_bp.index') }}">Home</a>
+            <a href="{{ url_for('main_bp.historical_data') }}">Historical Data</a>
+            <a href="{{ url_for('main_bp.about') }}">About ML</a>
+            <a href="#">Login/Sign Up</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; 2025 AeroPricePredictor | Cloud Architect Project</p>
+    </footer>
+</body>
+</html>

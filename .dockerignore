@@ -1,0 +1,16 @@
+# Ignore the virtual environment
+venv/
+.vscode/
+
+# Ignore local environment files and project-specific files
+.env
+__pycache__/
+
+# Ignore Git files
+.git
+.gitignore
+
+# Ignore any local test data we don't need in the final build
+tests/
+*.pyc
+*.log
